@@ -18,8 +18,12 @@ type userRoute struct {
 func NewUserRoute(service userproto.UserCRUDClient, r *mux.Router) {
 	handler := &userRoute{service}
 
-	prefix := r.PathPrefix("/users").Subrouter()
-	prefix.HandleFunc("", handler.getAll).Methods(http.MethodGet)
+	prefUser := r.PathPrefix("/users").Subrouter()
+	prefUser.HandleFunc("", handler.getAll).Methods(http.MethodGet)
+	prefUser.HandleFunc("/{id}", handler.getByID).Methods(http.MethodGet)
+	prefUser.HandleFunc("", handler.create).Methods(http.MethodPost)
+	prefUser.HandleFunc("/{id}", handler.update).Methods(http.MethodPut)
+	prefUser.HandleFunc("/{id}", handler.delete).Methods(http.MethodDelete)
 }
 
 func (u *userRoute) getAll(w http.ResponseWriter, r *http.Request) {
