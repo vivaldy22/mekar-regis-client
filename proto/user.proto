@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package user_proto;
+
+message Empty {
+
+}
+
+message ID {
+    string id = 1;
+}
+
+message User {
+    string user_id = 1;
+    string user_name = 2;
+    string user_bday = 3;
+    string user_ktp = 4;
+    string user_job = 5;
+    string user_edu = 6;
+    string user_status = 7;
+}
+
+message UserList {
+    repeated User list = 1;
+}
+
+message UserUpdateRequest {
+    string id = 1;
+    User user = 2;
+}
+
+message Job {
+    string job_id = 1;
+    string job_name = 2;
+}
+
+message Edu {
+    string edu_id = 1;
+    string edu_name = 2;
+}
+
+service UserCRUD {
+    rpc GetAll(Empty) returns (UserList);
+    rpc GetByID(ID) returns (User);
+    rpc Create(User) returns (User);
+    rpc Update(UserUpdateRequest) returns (User);
+    rpc Delete(ID) returns (Empty);
+}
