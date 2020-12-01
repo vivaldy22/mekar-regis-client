@@ -3,6 +3,7 @@ package routes
 import (
 	"context"
 	"github.com/gorilla/mux"
+	"github.com/vivaldy22/mekar-regis-client/middleware"
 	userproto "github.com/vivaldy22/mekar-regis-client/proto"
 	"github.com/vivaldy22/mekar-regis-client/tools/respJson"
 	"net/http"
@@ -15,8 +16,10 @@ type eduRoute struct {
 func NewEduRoute(service userproto.EduCRUDClient, r *mux.Router) {
 	handler := &eduRoute{service}
 
-	prefJob := r.PathPrefix("/edus").Subrouter()
-	prefJob.HandleFunc("", handler.getAll).Methods(http.MethodGet)
+	prefEdu := r.PathPrefix("/edus").Subrouter()
+	prefEdu.Use(middleware.AdminJWTMiddleware.Handler)
+
+	prefEdu.HandleFunc("", handler.getAll).Methods(http.MethodGet)
 }
 
 func (e *eduRoute) getAll(w http.ResponseWriter, r *http.Request) {

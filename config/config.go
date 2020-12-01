@@ -30,8 +30,10 @@ func InitRouters(r *mux.Router) {
 	userClient := newUserClient()
 	jobClient := newJobClient()
 	eduClient := newEduClient()
+	authClient := newAuthClient()
 
 	routes.NewUserRoute(userClient, r)
 	routes.NewJobRoute(jobClient, r)
 	routes.NewEduRoute(eduClient, r)
+	routes.NewAuthRoute(authClient, r)
 }

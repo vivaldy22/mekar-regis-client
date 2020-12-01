@@ -3,6 +3,7 @@ package routes
 import (
 	"context"
 	"github.com/gorilla/mux"
+	"github.com/vivaldy22/mekar-regis-client/middleware"
 	userproto "github.com/vivaldy22/mekar-regis-client/proto"
 	"github.com/vivaldy22/mekar-regis-client/tools/respJson"
 	"net/http"
@@ -16,6 +17,8 @@ func NewJobRoute(service userproto.JobCRUDClient, r *mux.Router) {
 	handler := &jobRoute{service}
 
 	prefJob := r.PathPrefix("/jobs").Subrouter()
+	prefJob.Use(middleware.AdminJWTMiddleware.Handler)
+
 	prefJob.HandleFunc("", handler.getAll).Methods(http.MethodGet)
 }
 

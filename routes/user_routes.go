@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"github.com/gorilla/mux"
+	"github.com/vivaldy22/mekar-regis-client/middleware"
 	userproto "github.com/vivaldy22/mekar-regis-client/proto"
 	"github.com/vivaldy22/mekar-regis-client/tools/respJson"
 	"github.com/vivaldy22/mekar-regis-client/tools/validation"
@@ -19,6 +20,8 @@ func NewUserRoute(service userproto.UserCRUDClient, r *mux.Router) {
 	handler := &userRoute{service}
 
 	prefUser := r.PathPrefix("/users").Subrouter()
+	prefUser.Use(middleware.AdminJWTMiddleware.Handler)
+
 	prefUser.HandleFunc("", handler.getAll).Methods(http.MethodGet)
 	prefUser.HandleFunc("/{id}", handler.getByID).Methods(http.MethodGet)
 	prefUser.HandleFunc("", handler.create).Methods(http.MethodPost)

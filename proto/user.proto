@@ -10,6 +10,25 @@ message ID {
     string id = 1;
 }
 
+message Admin {
+    string admin_id = 1;
+    string admin_uname = 2;
+    string admin_pass = 3;
+}
+
+message PassResponse {
+    string hashed_password = 1;
+}
+
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    string token = 1;
+}
+
 message User {
     string user_id = 1;
     string user_name = 2;
@@ -45,6 +64,11 @@ message Edu {
 
 message EduList {
     repeated Edu list = 1;
+}
+
+service AuthRPC {
+    rpc GetPassword(LoginRequest) returns (PassResponse);
+    rpc GenerateToken(LoginRequest) returns (LoginResponse);
 }
 
 service UserCRUD {

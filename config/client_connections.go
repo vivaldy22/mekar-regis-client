@@ -39,3 +39,14 @@ func newEduClient() userproto.EduCRUDClient {
 
 	return userproto.NewEduCRUDClient(conn)
 }
+
+func newAuthClient() userproto.AuthRPCClient {
+	host := viper.ViperGetEnv("GRPC_USER_HOST", "localhost")
+	port := viper.ViperGetEnv("GRPC_USER_PORT", "1010")
+	conn, err := grpc.Dial(host+":"+port, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return userproto.NewAuthRPCClient(conn)
+}
