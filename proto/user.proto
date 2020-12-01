@@ -34,9 +34,17 @@ message Job {
     string job_name = 2;
 }
 
+message JobList {
+    repeated Job list = 1;
+}
+
 message Edu {
     string edu_id = 1;
     string edu_name = 2;
+}
+
+message EduList {
+    repeated Edu list = 1;
 }
 
 service UserCRUD {
@@ -45,4 +53,12 @@ service UserCRUD {
     rpc Create(User) returns (User);
     rpc Update(UserUpdateRequest) returns (User);
     rpc Delete(ID) returns (Empty);
+}
+
+service JobCRUD {
+    rpc GetAll(Empty) returns (JobList);
+}
+
+service EduCRUD {
+    rpc GetAll(Empty) returns (EduList);
 }

@@ -366,6 +366,53 @@ func (x *Job) GetJobName() string {
 	return ""
 }
 
+type JobList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	List []*Job `protobuf:"bytes,1,rep,name=list,proto3" json:"list,omitempty"`
+}
+
+func (x *JobList) Reset() {
+	*x = JobList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_user_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *JobList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JobList) ProtoMessage() {}
+
+func (x *JobList) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_user_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use JobList.ProtoReflect.Descriptor instead.
+func (*JobList) Descriptor() ([]byte, []int) {
+	return file_proto_user_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *JobList) GetList() []*Job {
+	if x != nil {
+		return x.List
+	}
+	return nil
+}
+
 type Edu struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -378,7 +425,7 @@ type Edu struct {
 func (x *Edu) Reset() {
 	*x = Edu{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_user_proto_msgTypes[6]
+		mi := &file_proto_user_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -391,7 +438,7 @@ func (x *Edu) String() string {
 func (*Edu) ProtoMessage() {}
 
 func (x *Edu) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_user_proto_msgTypes[6]
+	mi := &file_proto_user_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -404,7 +451,7 @@ func (x *Edu) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Edu.ProtoReflect.Descriptor instead.
 func (*Edu) Descriptor() ([]byte, []int) {
-	return file_proto_user_proto_rawDescGZIP(), []int{6}
+	return file_proto_user_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *Edu) GetEduId() string {
@@ -419,6 +466,53 @@ func (x *Edu) GetEduName() string {
 		return x.EduName
 	}
 	return ""
+}
+
+type EduList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	List []*Edu `protobuf:"bytes,1,rep,name=list,proto3" json:"list,omitempty"`
+}
+
+func (x *EduList) Reset() {
+	*x = EduList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_user_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *EduList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EduList) ProtoMessage() {}
+
+func (x *EduList) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_user_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EduList.ProtoReflect.Descriptor instead.
+func (*EduList) Descriptor() ([]byte, []int) {
+	return file_proto_user_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *EduList) GetList() []*Edu {
+	if x != nil {
+		return x.List
+	}
+	return nil
 }
 
 var File_proto_user_proto protoreflect.FileDescriptor
@@ -452,10 +546,16 @@ var file_proto_user_proto_rawDesc = []byte{
 	0x15, 0x0a, 0x06, 0x6a, 0x6f, 0x62, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x05, 0x6a, 0x6f, 0x62, 0x49, 0x64, 0x12, 0x19, 0x0a, 0x08, 0x6a, 0x6f, 0x62, 0x5f, 0x6e, 0x61,
 	0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6a, 0x6f, 0x62, 0x4e, 0x61, 0x6d,
-	0x65, 0x22, 0x37, 0x0a, 0x03, 0x45, 0x64, 0x75, 0x12, 0x15, 0x0a, 0x06, 0x65, 0x64, 0x75, 0x5f,
+	0x65, 0x22, 0x2e, 0x0a, 0x07, 0x4a, 0x6f, 0x62, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x23, 0x0a, 0x04,
+	0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x75, 0x73, 0x65,
+	0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x4a, 0x6f, 0x62, 0x52, 0x04, 0x6c, 0x69, 0x73,
+	0x74, 0x22, 0x37, 0x0a, 0x03, 0x45, 0x64, 0x75, 0x12, 0x15, 0x0a, 0x06, 0x65, 0x64, 0x75, 0x5f,
 	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x64, 0x75, 0x49, 0x64, 0x12,
 	0x19, 0x0a, 0x08, 0x65, 0x64, 0x75, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x07, 0x65, 0x64, 0x75, 0x4e, 0x61, 0x6d, 0x65, 0x32, 0x80, 0x02, 0x0a, 0x08, 0x55,
+	0x09, 0x52, 0x07, 0x65, 0x64, 0x75, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x2e, 0x0a, 0x07, 0x45, 0x64,
+	0x75, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x23, 0x0a, 0x04, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20,
+	0x03, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x2e, 0x45, 0x64, 0x75, 0x52, 0x04, 0x6c, 0x69, 0x73, 0x74, 0x32, 0x80, 0x02, 0x0a, 0x08, 0x55,
 	0x73, 0x65, 0x72, 0x43, 0x52, 0x55, 0x44, 0x12, 0x31, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x41, 0x6c,
 	0x6c, 0x12, 0x11, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45,
 	0x6d, 0x70, 0x74, 0x79, 0x1a, 0x14, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74,
@@ -471,8 +571,15 @@ var file_proto_user_proto_rawDesc = []byte{
 	0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x55, 0x73, 0x65, 0x72,
 	0x12, 0x2b, 0x0a, 0x06, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x12, 0x0e, 0x2e, 0x75, 0x73, 0x65,
 	0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x49, 0x44, 0x1a, 0x11, 0x2e, 0x75, 0x73, 0x65,
-	0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x32, 0x3b, 0x0a,
+	0x07, 0x4a, 0x6f, 0x62, 0x43, 0x52, 0x55, 0x44, 0x12, 0x30, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x41,
+	0x6c, 0x6c, 0x12, 0x11, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e,
+	0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x13, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x2e, 0x4a, 0x6f, 0x62, 0x4c, 0x69, 0x73, 0x74, 0x32, 0x3b, 0x0a, 0x07, 0x45, 0x64,
+	0x75, 0x43, 0x52, 0x55, 0x44, 0x12, 0x30, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x12,
+	0x11, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x6d, 0x70,
+	0x74, 0x79, 0x1a, 0x13, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e,
+	0x45, 0x64, 0x75, 0x4c, 0x69, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -487,7 +594,7 @@ func file_proto_user_proto_rawDescGZIP() []byte {
 	return file_proto_user_proto_rawDescData
 }
 
-var file_proto_user_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_proto_user_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_proto_user_proto_goTypes = []interface{}{
 	(*Empty)(nil),             // 0: user_proto.Empty
 	(*ID)(nil),                // 1: user_proto.ID
@@ -495,26 +602,34 @@ var file_proto_user_proto_goTypes = []interface{}{
 	(*UserList)(nil),          // 3: user_proto.UserList
 	(*UserUpdateRequest)(nil), // 4: user_proto.UserUpdateRequest
 	(*Job)(nil),               // 5: user_proto.Job
-	(*Edu)(nil),               // 6: user_proto.Edu
+	(*JobList)(nil),           // 6: user_proto.JobList
+	(*Edu)(nil),               // 7: user_proto.Edu
+	(*EduList)(nil),           // 8: user_proto.EduList
 }
 var file_proto_user_proto_depIdxs = []int32{
-	2, // 0: user_proto.UserList.list:type_name -> user_proto.User
-	2, // 1: user_proto.UserUpdateRequest.user:type_name -> user_proto.User
-	0, // 2: user_proto.UserCRUD.GetAll:input_type -> user_proto.Empty
-	1, // 3: user_proto.UserCRUD.GetByID:input_type -> user_proto.ID
-	2, // 4: user_proto.UserCRUD.Create:input_type -> user_proto.User
-	4, // 5: user_proto.UserCRUD.Update:input_type -> user_proto.UserUpdateRequest
-	1, // 6: user_proto.UserCRUD.Delete:input_type -> user_proto.ID
-	3, // 7: user_proto.UserCRUD.GetAll:output_type -> user_proto.UserList
-	2, // 8: user_proto.UserCRUD.GetByID:output_type -> user_proto.User
-	2, // 9: user_proto.UserCRUD.Create:output_type -> user_proto.User
-	2, // 10: user_proto.UserCRUD.Update:output_type -> user_proto.User
-	0, // 11: user_proto.UserCRUD.Delete:output_type -> user_proto.Empty
-	7, // [7:12] is the sub-list for method output_type
-	2, // [2:7] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	2,  // 0: user_proto.UserList.list:type_name -> user_proto.User
+	2,  // 1: user_proto.UserUpdateRequest.user:type_name -> user_proto.User
+	5,  // 2: user_proto.JobList.list:type_name -> user_proto.Job
+	7,  // 3: user_proto.EduList.list:type_name -> user_proto.Edu
+	0,  // 4: user_proto.UserCRUD.GetAll:input_type -> user_proto.Empty
+	1,  // 5: user_proto.UserCRUD.GetByID:input_type -> user_proto.ID
+	2,  // 6: user_proto.UserCRUD.Create:input_type -> user_proto.User
+	4,  // 7: user_proto.UserCRUD.Update:input_type -> user_proto.UserUpdateRequest
+	1,  // 8: user_proto.UserCRUD.Delete:input_type -> user_proto.ID
+	0,  // 9: user_proto.JobCRUD.GetAll:input_type -> user_proto.Empty
+	0,  // 10: user_proto.EduCRUD.GetAll:input_type -> user_proto.Empty
+	3,  // 11: user_proto.UserCRUD.GetAll:output_type -> user_proto.UserList
+	2,  // 12: user_proto.UserCRUD.GetByID:output_type -> user_proto.User
+	2,  // 13: user_proto.UserCRUD.Create:output_type -> user_proto.User
+	2,  // 14: user_proto.UserCRUD.Update:output_type -> user_proto.User
+	0,  // 15: user_proto.UserCRUD.Delete:output_type -> user_proto.Empty
+	6,  // 16: user_proto.JobCRUD.GetAll:output_type -> user_proto.JobList
+	8,  // 17: user_proto.EduCRUD.GetAll:output_type -> user_proto.EduList
+	11, // [11:18] is the sub-list for method output_type
+	4,  // [4:11] is the sub-list for method input_type
+	4,  // [4:4] is the sub-list for extension type_name
+	4,  // [4:4] is the sub-list for extension extendee
+	0,  // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_proto_user_proto_init() }
@@ -596,7 +711,31 @@ func file_proto_user_proto_init() {
 			}
 		}
 		file_proto_user_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*JobList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_user_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Edu); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_user_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*EduList); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -614,9 +753,9 @@ func file_proto_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_user_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   9,
 			NumExtensions: 0,
-			NumServices:   1,
+			NumServices:   3,
 		},
 		GoTypes:           file_proto_user_proto_goTypes,
 		DependencyIndexes: file_proto_user_proto_depIdxs,
@@ -846,6 +985,150 @@ var _UserCRUD_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Delete",
 			Handler:    _UserCRUD_Delete_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "proto/user.proto",
+}
+
+// JobCRUDClient is the client API for JobCRUD service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type JobCRUDClient interface {
+	GetAll(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*JobList, error)
+}
+
+type jobCRUDClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewJobCRUDClient(cc grpc.ClientConnInterface) JobCRUDClient {
+	return &jobCRUDClient{cc}
+}
+
+func (c *jobCRUDClient) GetAll(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*JobList, error) {
+	out := new(JobList)
+	err := c.cc.Invoke(ctx, "/user_proto.JobCRUD/GetAll", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// JobCRUDServer is the server API for JobCRUD service.
+type JobCRUDServer interface {
+	GetAll(context.Context, *Empty) (*JobList, error)
+}
+
+// UnimplementedJobCRUDServer can be embedded to have forward compatible implementations.
+type UnimplementedJobCRUDServer struct {
+}
+
+func (*UnimplementedJobCRUDServer) GetAll(context.Context, *Empty) (*JobList, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAll not implemented")
+}
+
+func RegisterJobCRUDServer(s *grpc.Server, srv JobCRUDServer) {
+	s.RegisterService(&_JobCRUD_serviceDesc, srv)
+}
+
+func _JobCRUD_GetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JobCRUDServer).GetAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_proto.JobCRUD/GetAll",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JobCRUDServer).GetAll(ctx, req.(*Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _JobCRUD_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "user_proto.JobCRUD",
+	HandlerType: (*JobCRUDServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetAll",
+			Handler:    _JobCRUD_GetAll_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "proto/user.proto",
+}
+
+// EduCRUDClient is the client API for EduCRUD service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type EduCRUDClient interface {
+	GetAll(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*EduList, error)
+}
+
+type eduCRUDClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewEduCRUDClient(cc grpc.ClientConnInterface) EduCRUDClient {
+	return &eduCRUDClient{cc}
+}
+
+func (c *eduCRUDClient) GetAll(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*EduList, error) {
+	out := new(EduList)
+	err := c.cc.Invoke(ctx, "/user_proto.EduCRUD/GetAll", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// EduCRUDServer is the server API for EduCRUD service.
+type EduCRUDServer interface {
+	GetAll(context.Context, *Empty) (*EduList, error)
+}
+
+// UnimplementedEduCRUDServer can be embedded to have forward compatible implementations.
+type UnimplementedEduCRUDServer struct {
+}
+
+func (*UnimplementedEduCRUDServer) GetAll(context.Context, *Empty) (*EduList, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAll not implemented")
+}
+
+func RegisterEduCRUDServer(s *grpc.Server, srv EduCRUDServer) {
+	s.RegisterService(&_EduCRUD_serviceDesc, srv)
+}
+
+func _EduCRUD_GetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EduCRUDServer).GetAll(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_proto.EduCRUD/GetAll",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EduCRUDServer).GetAll(ctx, req.(*Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _EduCRUD_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "user_proto.EduCRUD",
+	HandlerType: (*EduCRUDServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetAll",
+			Handler:    _EduCRUD_GetAll_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

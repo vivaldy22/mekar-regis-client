@@ -17,3 +17,25 @@ func newUserClient() userproto.UserCRUDClient {
 
 	return userproto.NewUserCRUDClient(conn)
 }
+
+func newJobClient() userproto.JobCRUDClient {
+	host := viper.ViperGetEnv("GRPC_USER_HOST", "localhost")
+	port := viper.ViperGetEnv("GRPC_USER_PORT", "1010")
+	conn, err := grpc.Dial(host+":"+port, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return userproto.NewJobCRUDClient(conn)
+}
+
+func newEduClient() userproto.EduCRUDClient {
+	host := viper.ViperGetEnv("GRPC_USER_HOST", "localhost")
+	port := viper.ViperGetEnv("GRPC_USER_PORT", "1010")
+	conn, err := grpc.Dial(host+":"+port, grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return userproto.NewEduCRUDClient(conn)
+}

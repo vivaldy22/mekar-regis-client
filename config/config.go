@@ -28,5 +28,10 @@ func InitRouters(r *mux.Router) {
 	r.Use(middleware.ActivityLogMiddleware)
 
 	userClient := newUserClient()
+	jobClient := newJobClient()
+	eduClient := newEduClient()
+
 	routes.NewUserRoute(userClient, r)
+	routes.NewJobRoute(jobClient, r)
+	routes.NewEduRoute(eduClient, r)
 }
