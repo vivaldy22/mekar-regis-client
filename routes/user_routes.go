@@ -6,6 +6,7 @@ import (
 	"github.com/gorilla/mux"
 	userproto "github.com/vivaldy22/mekar-regis-client/proto"
 	"github.com/vivaldy22/mekar-regis-client/tools/respJson"
+	"github.com/vivaldy22/mekar-regis-client/tools/validation"
 	"github.com/vivaldy22/mekar-regis-client/tools/varMux"
 	"net/http"
 )
@@ -59,21 +60,40 @@ func (u *userRoute) create(w http.ResponseWriter, r *http.Request) {
 		respJson.WriteJSON(false, http.StatusBadRequest, "Decoding JSON failed", nil, err, w)
 		//vError.WriteError("Decoding json failed!", http.StatusExpectationFailed, err, w)
 	} else {
-		created, err := u.service.Create(context.Background(), user)
+		err = validation.ValidateInputNotEmpty(user.UserName, user.UserKtp, user.UserBday, user.UserJob, user.UserEdu)
 
 		if err != nil {
-			respJson.WriteJSON(false, http.StatusBadRequest, "Create User failed", nil, err, w)
-			//vError.WriteError("Create User Failed!", http.StatusBadRequest, err, w)
+			respJson.WriteJSON(false, http.StatusBadRequest, "input error", nil, err, w)
 		} else {
-			data, err := u.service.GetByID(context.Background(), &userproto.ID{
-				Id: created.UserId,
-			})
+			err = validation.ValidateDate(user.UserBday)
 
 			if err != nil {
-				respJson.WriteJSON(false, http.StatusBadRequest, "Get User by ID failed", nil, err, w)
-				//vError.WriteError("Get User by ID failed", http.StatusBadRequest, err, w)
+				respJson.WriteJSON(false, http.StatusBadRequest, "date error", nil, err, w)
 			} else {
-				respJson.WriteJSON(true, http.StatusOK, "Data created", data, nil, w)
+
+				err = validation.ValidateKTP(user.UserKtp)
+
+				if err != nil {
+					respJson.WriteJSON(false, http.StatusBadRequest, "ktp error", nil, err, w)
+				} else {
+					created, err := u.service.Create(context.Background(), user)
+
+					if err != nil {
+						respJson.WriteJSON(false, http.StatusBadRequest, "Create User failed", nil, err, w)
+						//vError.WriteError("Create User Failed!", http.StatusBadRequest, err, w)
+					} else {
+						data, err := u.service.GetByID(context.Background(), &userproto.ID{
+							Id: created.UserId,
+						})
+
+						if err != nil {
+							respJson.WriteJSON(false, http.StatusBadRequest, "Get User by ID failed", nil, err, w)
+							//vError.WriteError("Get User by ID failed", http.StatusBadRequest, err, w)
+						} else {
+							respJson.WriteJSON(true, http.StatusOK, "Data created", data, nil, w)
+						}
+					}
+				}
 			}
 		}
 	}
@@ -87,28 +107,48 @@ func (u *userRoute) update(w http.ResponseWriter, r *http.Request) {
 		respJson.WriteJSON(false, http.StatusExpectationFailed, "Decoding json failed", nil, err, w)
 		//vError.WriteError("Decoding json failed", http.StatusExpectationFailed, err, w)
 	} else {
-		id := varMux.GetVarsMux("id", r)
-
-		_, err := u.service.Update(context.Background(), &userproto.UserUpdateRequest{
-			Id:   id,
-			User: user,
-		})
+		err = validation.ValidateInputNotEmpty(user.UserName, user.UserKtp, user.UserBday, user.UserJob, user.UserEdu)
 
 		if err != nil {
-			respJson.WriteJSON(false, http.StatusBadRequest, "Updating data failed", nil, err, w)
-			//vError.WriteError("Updating data failed!", http.StatusBadRequest, err, w)
+			respJson.WriteJSON(false, http.StatusBadRequest, "", nil, err, w)
 		} else {
-			data, err := u.service.GetByID(context.Background(), &userproto.ID{
-				Id: id,
-			})
+			err = validation.ValidateDate(user.UserBday)
 
 			if err != nil {
-				respJson.WriteJSON(false, http.StatusBadRequest, "Get User by ID failed", nil, err, w)
-				//vError.WriteError("Get User by ID failed!", http.StatusBadRequest, err, w)
+				respJson.WriteJSON(false, http.StatusBadRequest, "", nil, err, w)
 			} else {
-				respJson.WriteJSON(true, http.StatusOK, "Data found", data, nil, w)
+				err = validation.ValidateKTP(user.UserKtp)
+
+				if err != nil {
+					respJson.WriteJSON(false, http.StatusBadRequest, "", nil, err, w)
+				} else {
+					id := varMux.GetVarsMux("id", r)
+
+					data, err := u.service.GetByID(context.Background(), &userproto.ID{
+						Id: id,
+					})
+
+					if err != nil {
+						respJson.WriteJSON(false, http.StatusBadRequest, "Data not found", nil, err, w)
+						//vError.WriteError("Get User by ID failed!", http.StatusBadRequest, err, w)
+					} else {
+						_, err := u.service.Update(context.Background(), &userproto.UserUpdateRequest{
+							Id:   id,
+							User: user,
+						})
+
+						if err != nil {
+							respJson.WriteJSON(false, http.StatusBadRequest, "Updating data failed", nil, err, w)
+							//vError.WriteError("Updating data failed!", http.StatusBadRequest, err, w)
+						} else {
+							respJson.WriteJSON(true, http.StatusOK, "Data updated", data, nil, w)
+						}
+					}
+				}
 			}
 		}
+
+
 	}
 }
 
