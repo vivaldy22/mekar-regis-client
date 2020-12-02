@@ -809,15 +809,21 @@ var file_proto_user_proto_rawDesc = []byte{
 	0x10, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x55, 0x73, 0x65,
 	0x72, 0x12, 0x2b, 0x0a, 0x06, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x12, 0x0e, 0x2e, 0x75, 0x73,
 	0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x49, 0x44, 0x1a, 0x11, 0x2e, 0x75, 0x73,
-	0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x32, 0x3b,
+	0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x32, 0x67,
 	0x0a, 0x07, 0x4a, 0x6f, 0x62, 0x43, 0x52, 0x55, 0x44, 0x12, 0x30, 0x0a, 0x06, 0x47, 0x65, 0x74,
 	0x41, 0x6c, 0x6c, 0x12, 0x11, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x13, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x2e, 0x4a, 0x6f, 0x62, 0x4c, 0x69, 0x73, 0x74, 0x32, 0x3b, 0x0a, 0x07, 0x45,
-	0x64, 0x75, 0x43, 0x52, 0x55, 0x44, 0x12, 0x30, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c,
-	0x12, 0x11, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x6d,
-	0x70, 0x74, 0x79, 0x1a, 0x13, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x2e, 0x45, 0x64, 0x75, 0x4c, 0x69, 0x73, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x74, 0x6f, 0x2e, 0x4a, 0x6f, 0x62, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x07, 0x47,
+	0x65, 0x74, 0x42, 0x79, 0x49, 0x44, 0x12, 0x0e, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x2e, 0x49, 0x44, 0x1a, 0x0f, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x2e, 0x4a, 0x6f, 0x62, 0x32, 0x67, 0x0a, 0x07, 0x45, 0x64, 0x75, 0x43, 0x52,
+	0x55, 0x44, 0x12, 0x30, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x12, 0x11, 0x2e, 0x75,
+	0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a,
+	0x13, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x64, 0x75,
+	0x4c, 0x69, 0x73, 0x74, 0x12, 0x2a, 0x0a, 0x07, 0x47, 0x65, 0x74, 0x42, 0x79, 0x49, 0x44, 0x12,
+	0x0e, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x49, 0x44, 0x1a,
+	0x0f, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x45, 0x64, 0x75,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -861,18 +867,22 @@ var file_proto_user_proto_depIdxs = []int32{
 	8,  // 9: user_proto.UserCRUD.Update:input_type -> user_proto.UserUpdateRequest
 	1,  // 10: user_proto.UserCRUD.Delete:input_type -> user_proto.ID
 	0,  // 11: user_proto.JobCRUD.GetAll:input_type -> user_proto.Empty
-	0,  // 12: user_proto.EduCRUD.GetAll:input_type -> user_proto.Empty
-	3,  // 13: user_proto.AuthRPC.GetPassword:output_type -> user_proto.PassResponse
-	5,  // 14: user_proto.AuthRPC.GenerateToken:output_type -> user_proto.LoginResponse
-	7,  // 15: user_proto.UserCRUD.GetAll:output_type -> user_proto.UserList
-	6,  // 16: user_proto.UserCRUD.GetByID:output_type -> user_proto.User
-	6,  // 17: user_proto.UserCRUD.Create:output_type -> user_proto.User
-	6,  // 18: user_proto.UserCRUD.Update:output_type -> user_proto.User
-	0,  // 19: user_proto.UserCRUD.Delete:output_type -> user_proto.Empty
-	10, // 20: user_proto.JobCRUD.GetAll:output_type -> user_proto.JobList
-	12, // 21: user_proto.EduCRUD.GetAll:output_type -> user_proto.EduList
-	13, // [13:22] is the sub-list for method output_type
-	4,  // [4:13] is the sub-list for method input_type
+	1,  // 12: user_proto.JobCRUD.GetByID:input_type -> user_proto.ID
+	0,  // 13: user_proto.EduCRUD.GetAll:input_type -> user_proto.Empty
+	1,  // 14: user_proto.EduCRUD.GetByID:input_type -> user_proto.ID
+	3,  // 15: user_proto.AuthRPC.GetPassword:output_type -> user_proto.PassResponse
+	5,  // 16: user_proto.AuthRPC.GenerateToken:output_type -> user_proto.LoginResponse
+	7,  // 17: user_proto.UserCRUD.GetAll:output_type -> user_proto.UserList
+	6,  // 18: user_proto.UserCRUD.GetByID:output_type -> user_proto.User
+	6,  // 19: user_proto.UserCRUD.Create:output_type -> user_proto.User
+	6,  // 20: user_proto.UserCRUD.Update:output_type -> user_proto.User
+	0,  // 21: user_proto.UserCRUD.Delete:output_type -> user_proto.Empty
+	10, // 22: user_proto.JobCRUD.GetAll:output_type -> user_proto.JobList
+	9,  // 23: user_proto.JobCRUD.GetByID:output_type -> user_proto.Job
+	12, // 24: user_proto.EduCRUD.GetAll:output_type -> user_proto.EduList
+	11, // 25: user_proto.EduCRUD.GetByID:output_type -> user_proto.Edu
+	15, // [15:26] is the sub-list for method output_type
+	4,  // [4:15] is the sub-list for method input_type
 	4,  // [4:4] is the sub-list for extension type_name
 	4,  // [4:4] is the sub-list for extension extendee
 	0,  // [0:4] is the sub-list for field type_name
@@ -1398,6 +1408,7 @@ var _UserCRUD_serviceDesc = grpc.ServiceDesc{
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type JobCRUDClient interface {
 	GetAll(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*JobList, error)
+	GetByID(ctx context.Context, in *ID, opts ...grpc.CallOption) (*Job, error)
 }
 
 type jobCRUDClient struct {
@@ -1417,9 +1428,19 @@ func (c *jobCRUDClient) GetAll(ctx context.Context, in *Empty, opts ...grpc.Call
 	return out, nil
 }
 
+func (c *jobCRUDClient) GetByID(ctx context.Context, in *ID, opts ...grpc.CallOption) (*Job, error) {
+	out := new(Job)
+	err := c.cc.Invoke(ctx, "/user_proto.JobCRUD/GetByID", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // JobCRUDServer is the server API for JobCRUD service.
 type JobCRUDServer interface {
 	GetAll(context.Context, *Empty) (*JobList, error)
+	GetByID(context.Context, *ID) (*Job, error)
 }
 
 // UnimplementedJobCRUDServer can be embedded to have forward compatible implementations.
@@ -1428,6 +1449,9 @@ type UnimplementedJobCRUDServer struct {
 
 func (*UnimplementedJobCRUDServer) GetAll(context.Context, *Empty) (*JobList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAll not implemented")
+}
+func (*UnimplementedJobCRUDServer) GetByID(context.Context, *ID) (*Job, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByID not implemented")
 }
 
 func RegisterJobCRUDServer(s *grpc.Server, srv JobCRUDServer) {
@@ -1452,6 +1476,24 @@ func _JobCRUD_GetAll_Handler(srv interface{}, ctx context.Context, dec func(inte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _JobCRUD_GetByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ID)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JobCRUDServer).GetByID(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_proto.JobCRUD/GetByID",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JobCRUDServer).GetByID(ctx, req.(*ID))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _JobCRUD_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "user_proto.JobCRUD",
 	HandlerType: (*JobCRUDServer)(nil),
@@ -1459,6 +1501,10 @@ var _JobCRUD_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAll",
 			Handler:    _JobCRUD_GetAll_Handler,
+		},
+		{
+			MethodName: "GetByID",
+			Handler:    _JobCRUD_GetByID_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -1470,6 +1516,7 @@ var _JobCRUD_serviceDesc = grpc.ServiceDesc{
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type EduCRUDClient interface {
 	GetAll(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*EduList, error)
+	GetByID(ctx context.Context, in *ID, opts ...grpc.CallOption) (*Edu, error)
 }
 
 type eduCRUDClient struct {
@@ -1489,9 +1536,19 @@ func (c *eduCRUDClient) GetAll(ctx context.Context, in *Empty, opts ...grpc.Call
 	return out, nil
 }
 
+func (c *eduCRUDClient) GetByID(ctx context.Context, in *ID, opts ...grpc.CallOption) (*Edu, error) {
+	out := new(Edu)
+	err := c.cc.Invoke(ctx, "/user_proto.EduCRUD/GetByID", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EduCRUDServer is the server API for EduCRUD service.
 type EduCRUDServer interface {
 	GetAll(context.Context, *Empty) (*EduList, error)
+	GetByID(context.Context, *ID) (*Edu, error)
 }
 
 // UnimplementedEduCRUDServer can be embedded to have forward compatible implementations.
@@ -1500,6 +1557,9 @@ type UnimplementedEduCRUDServer struct {
 
 func (*UnimplementedEduCRUDServer) GetAll(context.Context, *Empty) (*EduList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAll not implemented")
+}
+func (*UnimplementedEduCRUDServer) GetByID(context.Context, *ID) (*Edu, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByID not implemented")
 }
 
 func RegisterEduCRUDServer(s *grpc.Server, srv EduCRUDServer) {
@@ -1524,6 +1584,24 @@ func _EduCRUD_GetAll_Handler(srv interface{}, ctx context.Context, dec func(inte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EduCRUD_GetByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ID)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EduCRUDServer).GetByID(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/user_proto.EduCRUD/GetByID",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EduCRUDServer).GetByID(ctx, req.(*ID))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _EduCRUD_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "user_proto.EduCRUD",
 	HandlerType: (*EduCRUDServer)(nil),
@@ -1531,6 +1609,10 @@ var _EduCRUD_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAll",
 			Handler:    _EduCRUD_GetAll_Handler,
+		},
+		{
+			MethodName: "GetByID",
+			Handler:    _EduCRUD_GetByID_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

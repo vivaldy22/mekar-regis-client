@@ -81,8 +81,10 @@ service UserCRUD {
 
 service JobCRUD {
     rpc GetAll(Empty) returns (JobList);
+    rpc GetByID(ID) returns (Job);
 }
 
 service EduCRUD {
     rpc GetAll(Empty) returns (EduList);
+    rpc GetByID(ID) returns (Edu);
 }
